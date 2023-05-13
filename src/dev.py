@@ -57,7 +57,8 @@ def add_header(response):
     
 if __name__ == "__main__":
     if not os.path.exists("src/urls.json"):
-        with open("src/urls.json", "w") as o: # The urls into file urls.json will open. r = read
+        os.makedirs("src", exists_ok=True)
+        with open("src/urls.json", "w") as o:
             shortened_urls = {}
             json.dump(shortened_urls, o)
     else:
