@@ -29,7 +29,7 @@ def index():
                 short_url = generate_short_url()
 
         shortened_urls[short_url] = long_url
-        with open("src/urls.json", "w") as u: #w = write
+        with open("urls.json", "w") as u: #w = write
             json.dump(shortened_urls, u)
         shortened_URL = f"{request.url_root}{short_url}" #{request.url_root} = http://IPWebPage or domain
         return render_template("view/redirect.html", shortened_URL=shortened_URL)
@@ -56,12 +56,11 @@ def add_header(response):
 
     
 if __name__ == "__main__":
-    if not os.path.exists("src/urls.json"):
-        os.makedirs("src", exists_ok=True)
-        with open("src/urls.json", "w") as o:
+    if not os.path.exists("urls.json"):
+        with open("urls.json", "w") as o:
             shortened_urls = {}
             json.dump(shortened_urls, o)
     else:
-        with open("src/urls.json", "r") as o:
+        with open("urls.json", "r") as o:
             shortened_urls = json.load(o)
     app.run(host="0.0.0.0", port=5000, debug=True)
