@@ -24,6 +24,8 @@ def index():
         change_URL = request.form.get('change_URL','').strip()
         if change_URL:
             short_url = generate_customized_url(change_URL)
+            if change_URL in shortened_urls:
+                raise Exception(f"The custom URL '{change_URL}' is already in used.")
         else:
             short_url = generate_short_url()
             while short_url in shortened_urls:
