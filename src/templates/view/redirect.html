@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% block title %} URLINATOR {% endblock %}
+{% block content %}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active input-group" aria-current="page">
+                            <span class="input-group-text">Back:</span>
+                                <a href="/" class="btn btn-primary stretched-link form-control"><--</a>
+                            </span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container p-5">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <div class="card-body">
+                <div class="input-group-text mb-3">
+                    <span class="input-group-text" id="basic-addon1">Shortened URL</span>
+                    <input type="text" class="form-control" id="short_url" name="short_url" value="{{ shortened_URL }}" aria-describedby="basic-addon1" autocomplete="off">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

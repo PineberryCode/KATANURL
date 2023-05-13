@@ -1,0 +1,31 @@
+{% extends 'basic.html' %}
+
+{% block title %} KATANURL {% endblock %}
+
+{% block content %}
+<div class="mb-3 p-3">
+    <h1 class="text-center">->KATANURL<-</h1>
+</div>
+<div class="container">
+    <div class="row p-3">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <div class="card-body">
+                <form method="POST" action="{{url_for('index')}}">
+                    <div class="form-group">
+                        <div class="input-group-text mb-3">
+                            <input type="url" class="form-control" name="long_url" placeholder="Enter the long URL" aria-label="URL" autocomplete="off" required>
+                        </div>
+                        <div class="input-group-text mb-3">
+                            <span class="input-group-text" id="basic-addon1">Optional</span>
+                        <input type="text" class="form-control" name="change_URL" placeholder="Change URL name" aria-label="Change URL" aria-describedby="basic-addon1" autocomplete="off">
+                        </div>
+                        <div class="box-footer p-2 text-center">
+                            <button type="submit" class="btn btn-outline-primary" id="_a01">Shorten</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

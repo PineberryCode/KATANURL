@@ -1,0 +1,21 @@
+body {
+    font-family: "AtlantisInternational", sans-serif;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'AtlantisInternational';
+    src: url("/static/fonts/AtlantisInternational-jen0.ttf");
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.form-control, .input-group-text {
+    font-size: 25px;
+}
+
+#_a01 {
+    font-size: 25px;
+}
