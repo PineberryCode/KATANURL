@@ -20,7 +20,7 @@ def generate_customized_url(change_URL):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        long_url = request.form['long_url'].strip() #long_url is the link of the input Example -> http://anywebpage.com
+        long_url = request.form['long_url'].strip()
         change_URL = request.form.get('change_URL','').strip()
         if change_URL:
             short_url = generate_customized_url(change_URL)
@@ -34,7 +34,7 @@ def index():
         shortened_urls[short_url] = long_url
         with open("urls.json", "w") as u: #w = write
             json.dump(shortened_urls, u)
-        shortened_URL = f"{request.url_root}{short_url}" #{request.url_root} = http://IPWebPage or domain
+        shortened_URL = f"{request.url_root}{short_url}"
         return render_template("view/redirect.html", shortened_URL=shortened_URL)
     return render_template("view/welcome.html")
 
