@@ -2,6 +2,7 @@ import random
 import string
 import json
 import os
+import secrets
 from flask import Flask, render_template, redirect, request
 
 app = Flask(__name__)
@@ -56,6 +57,9 @@ def add_header(response):
 
     
 if __name__ == "__main__":
+    #Set secret key
+    secret_key = secrets.token_hex(32)
+    app.secret_key = secret_key
     if not os.path.exists("urls.json"):
         with open("urls.json", "w") as o:
             shortened_urls = {}
